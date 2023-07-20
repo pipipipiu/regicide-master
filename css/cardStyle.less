@@ -1,0 +1,381 @@
+@imageScale: 5;
+@originalWidth: 732px;
+@originalHeight: 1024px;
+
+@iconWidth: 73px;
+@iconHeight: 111px;
+
+@cardOffset: 35px;
+img {
+  user-select: none;
+}
+
+div {
+  box-sizing: content-box;
+}
+
+//区域
+
+.pileArea {
+  width: 100%;
+  height: (@originalHeight / @imageScale);
+  display: flex;
+  padding-top: 10px;
+  .pileArea-con {
+    flex: 1;
+  }
+}
+
+.combateArea {
+  width: 100%;
+  height: (@originalHeight / @imageScale) * 1.4;
+  display: flex;
+  div {
+    flex: 1;
+  }
+  .enemy {
+    position: relative;
+    width: (@originalWidth / @imageScale);
+    height: (@originalHeight / @imageScale);
+    border-radius: 8px;
+    margin: 30px auto;
+    .bg {
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+      background-color: #fff;
+      transform: translateZ(1px);
+    }
+  }
+}
+
+.handArea {
+  position: relative;
+  width: 100%;
+  height: (@originalHeight / @imageScale);
+  .hand {
+    position: relative;
+    border-radius: 8px;
+    height: (@originalHeight / @imageScale);
+    width: (@originalWidth / @imageScale)+7 * @cardOffset;
+    background-color: #fff;
+    margin: 0 auto;
+    .confirmIcon,
+    .cancelIcon{
+      width: 50px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      transition: all 0.5s;
+      position: absolute;
+      font-family: 'icomoon';
+      font-size: 20px;
+      color: #aa3933;
+      background-color: #fff;
+      border-radius: 0 4px 4px 0;
+      right: 0;
+      top: 25px;
+      user-select: none;
+    }
+    .cancelIcon {
+      top: 75px;
+      font-size: 16px;
+      color: #1a0903;
+    }
+    .card {
+      transform: rotateY(180deg);
+      visibility: hidden;
+      // display: none;
+    }
+    .bg {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      border-radius: 8px;
+      transform: translateZ(1px);
+    }
+  }
+}
+
+.handArea .hand .card:nth-of-type(5) {
+  left: @cardOffset;
+  z-index: 24;
+}
+
+.handArea .hand .card:nth-of-type(6) {
+  left: @cardOffset*2;
+  z-index: 26;
+}
+
+.handArea .hand .card:nth-of-type(7) {
+  left: @cardOffset*3;
+  z-index: 28;
+}
+
+.handArea .hand .card:nth-of-type(8) {
+  left: @cardOffset*4;
+  z-index: 30;
+}
+
+.handArea .hand .card:nth-of-type(9) {
+  left: @cardOffset*5;
+  z-index: 32;
+}
+
+.handArea .hand .card:nth-of-type(10) {
+  left: @cardOffset*6;
+  z-index: 34;
+}
+
+.handArea .hand .card:nth-of-type(11) {
+  left: @cardOffset*7;
+  z-index: 36;
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: (@originalWidth / @imageScale);
+  height: (@originalHeight / @imageScale);
+  transition: all 0.3s;
+  transform-style: preserve-3d;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  .cardBack,
+  .cardFront {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .cardBack {
+    transform: translateZ(1px);
+  }
+  .cardFront {
+    transform: rotateY(180deg);
+  }
+}
+
+//牌堆
+.pile {
+  margin: 0 auto;
+  position: relative;
+  width: (@originalWidth / @imageScale);
+  height: (@originalHeight / @imageScale);
+  &:hover {
+    .remain {
+      display: block;
+    }
+  }
+  .bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: url('../images/Back.png') no-repeat;
+    opacity: 0.3;
+    background-size: (@originalWidth / @imageScale) (@originalHeight / @imageScale);
+  }
+  .remain {
+    display: none;
+    z-index: 50;
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    overflow: hidden;
+    div {
+      float: left;
+      width: (@iconWidth / @imageScale);
+      height: (@iconHeight / @imageScale);
+      img {
+        height: 100%;
+        width: auto;
+        opacity: 0.8;
+      }
+    }
+  }
+  .card {
+    visibility: hidden;
+  }
+}
+.specialPile {
+  display: none;
+}
+.pileArea .specialPileArea {
+  flex: 0;
+}
+
+.blankArea .Vis {
+  position: relative;
+  width: (@originalWidth / @imageScale)+5 * @cardOffset;
+  height: (@originalHeight / @imageScale);
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 30px auto;
+  .bg {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    transform: translateZ(1px);
+  }
+  .card {
+    visibility: hidden;
+    transform: rotateY(180deg);
+  }
+  .icon {
+    width: (@iconWidth / @imageScale) * 2;
+    height: (@iconHeight / @imageScale);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    background-color: #fff;
+    border-radius: 0 8px 8px 0;
+    transition: all 2s;
+    text-align: center;
+    overflow: hidden;
+    img {
+      height: 80%;
+      width: auto;
+      transform: translateY((@iconHeight / @imageScale) * 0.1);
+    }
+  }
+  .numIcon {
+    width: (@iconWidth / @imageScale) * 2.5;
+    height: (@iconHeight / @imageScale);
+    top: (@originalHeight / @imageScale) * 0.1;
+    transition: all 1s;
+  }
+  .heart {
+    top: (@originalHeight / @imageScale) * 0.4;
+    transition: all 1.5s;
+  }
+  .diamond {
+    top: (@originalHeight / @imageScale) * 0.55;
+    transition: all 2s;
+  }
+  .spade {
+    top: (@originalHeight / @imageScale) * 0.7;
+    transition: all 2.5s;
+  }
+  .club {
+    top: (@originalHeight / @imageScale) * 0.85;
+    transition: all 3s;
+  }
+}
+
+.Vis .card:nth-child(7) {
+  left: @cardOffset;
+  z-index: 2;
+}
+
+.Vis .card:nth-child(8) {
+  left: @cardOffset*2;
+  z-index: 4;
+}
+
+.Vis .card:nth-child(9) {
+  left: @cardOffset*3;
+  z-index: 6;
+}
+
+.Vis .card:nth-child(10) {
+  left: @cardOffset*4;
+  z-index: 8;
+}
+
+//卡牌
+.specialPile .card {
+  transform: rotateY(180deg);
+  // &:hover{
+  //     transform: translateY(-5px) rotateY(180deg);
+  // }
+}
+
+.enemy .card {
+  visibility: hidden;
+  transform: rotateY(180deg);
+  // &:hover{
+  //     transform: translateY(5px) rotateY(180deg);
+  // }
+}
+
+//显示
+.icon {
+  width: (@iconWidth / @imageScale) * 3;
+  height: (@iconHeight / @imageScale);
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+  border-radius: 0 8px 8px 0;
+  transition: all 0.6s;
+  div {
+    float: left;
+    width: 30%;
+    height: 100%;
+    background-color: #fff;
+    text-align: center;
+    img {
+      margin: 0 auto;
+      width: auto;
+      height: 80%;
+      transform: translateY((@iconHeight / @imageScale) * 0.1);
+    }
+  }
+  .k10 {
+    width: 10%;
+  }
+}
+
+.attackIcon {
+  top: 25px;
+}
+
+.heartIcon {
+  top: 55px;
+  transition: all 0.8s;
+}
+
+//动画
+.animateCard {
+  display: none;
+  top: 0;
+  left: 100px;
+  transition: none;
+  // &:hover{
+  //     transform: none;
+  // }
+}
+
+//公告
+
+.noticeBoard {
+  display: none;
+  position: absolute;
+  top: 502px;
+  left: 0;
+  width: 160px;
+  height: 200px;
+  div {
+    transition: all 0.6s;
+    display: block;
+    background-color: #fff;
+    width: 80%;
+    height: 20px;
+    border-radius: 10px;
+    margin: 0px auto 20px;
+    line-height: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  }
+}

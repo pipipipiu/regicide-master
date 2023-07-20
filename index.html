@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regicide</title>
+    <style>
+        @font-face {
+            font-family: "icomoon";
+            src: url('./fonts/icomoon.eot?7kkyc2');
+            src: url('./fonts/icomoon.eot?7kkyc2#iefix') format('embedded-opentype'),
+                url('./fonts/icomoon.ttf?7kkyc2') format('truetype'),
+                url('./fonts/icomoon.woff?7kkyc2') format('woff'),
+                url('./fonts/icomoon.svg?7kkyc2#icomoon') format('svg');
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="./css/interfaceStyle.css">
+    <link rel="stylesheet" href="./css/cardStyle.css">
+    <script src="js/animate.js"></script>
+    <script src="js/content.js"></script>
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="mainTable">
+            <div class="pileArea">
+                <div class="pileArea-con">
+                    <div class="pile drawPile">
+                        <div class="bg"></div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="remain" data-num="0">
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pileArea-con">
+                    <div class="pile discardPile">
+                        <div class="bg"></div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="remain" data-num="0">
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pileArea-con">
+                    <div class="pile enemyPile">
+                        <div class="bg"></div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="remain" data-num="0">
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pileArea-con specialPileArea">
+                    <div class="pile specialPile">
+                        <div class="bg"></div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (53).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="remain" data-num="0">
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="combateArea">
+                <div class="blankArea">
+                    <div class="Vis">
+                        <div class="icon numIcon">
+                            <img src="./icons/Num0.png" alt="">
+                            <img src="./icons/Num0.png" alt="">
+                        </div>
+                        <div class="icon heart">
+                            <img src="./icons/Heart.png" alt="">
+                        </div>
+                        <div class="icon diamond">
+                            <img src="./icons/Diamond.png" alt="">
+                        </div>
+                        <div class="icon spade">
+                            <img src="./icons/Spade.png">
+                        </div>
+                        <div class="icon club">
+                            <img src="./icons/Club.png">
+                        </div>
+                        <div class="bg">
+                        </div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (1).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="enemyArea">
+                    <div class="enemy">
+                        <div class="icon attackIcon">
+                            <div>
+                                <img src="./icons/Club.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/Num0.png">
+                            </div>
+                            <div class='k10'></div>
+                        </div>
+                        <div class="icon heartIcon">
+                            <div>
+                                <img src="./icons/Heart.png">
+                            </div>
+                            <div>
+                                <img src="./icons/RNum0.png">
+                            </div>
+                            <div>
+                                <img src="./icons/RNum0.png">
+                            </div>
+                            <div class='k10'></div>
+                        </div>
+                        <div class="bg"></div>
+                        <div class="card">
+                            <div class="cardFront">
+                                <img src="./images/Front (11).png" alt="">
+                            </div>
+                            <div class="cardBack">
+                                <img src="./images/Back.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="handArea">
+                <div class="hand">
+                    <div class="confirmIcon">√</div>
+                    <div class="cancelIcon">×</div>
+                    <div class="bg"></div>
+                    <div class="card" data-selected='0' data-point='1'>
+                        <div class="cardFront">
+                            <img src="./images/Front (1).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='2'>
+                        <div class="cardFront">
+                            <img src="./images/Front (2).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='3'>
+                        <div class="cardFront">
+                            <img src="./images/Front (3).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='4'>
+                        <div class="cardFront">
+                            <img src="./images/Front (4).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='5'>
+                        <div class="cardFront">
+                            <img src="./images/Front (5).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='6'>
+                        <div class="cardFront">
+                            <img src="./images/Front (6).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='7'>
+                        <div class="cardFront">
+                            <img src="./images/Front (7).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                    <div class="card" data-selected='0' data-point='8'>
+                        <div class="cardFront">
+                            <img src="./images/Front (8).png" alt="">
+                        </div>
+                        <div class="cardBack">
+                            <img src="./images/Back.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="animatePart">
+            <div class="card animateCard">
+                <div class="cardFront">
+                    <img src="./images/Front (11).png" alt="">
+                </div>
+                <div class="cardBack">
+                    <img src="./images/Back.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="noticeBoard">
+            <div>??????</div>
+            <div>??????</div>
+            <div>??????</div>
+        </div>
+    </div>
+</body>
+
+</html>
